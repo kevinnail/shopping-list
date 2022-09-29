@@ -26,15 +26,13 @@ addItemForm.addEventListener('submit', async (e) => {
     const response = await createListItem(newItem);
     error = response.error;
     const item = response.data;
-    const quantity = response.data;
-    console.log(item);
-    console.log(quantity);
+    // const quantity = response.data;
 
     if (error) {
         displayError();
     } else {
         items.push(item);
-        items.push(quantity);
+        // items.push(quantity);
         displayGroceryList();
         addItemForm.reset();
     }
