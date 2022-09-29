@@ -36,3 +36,7 @@ export async function createListItem(newItem) {
 export async function getGroceryItems() {
     return await client.from('lists').select('*');
 }
+
+export async function completeBuyItem(id) {
+    return await client.from('lists').update({ bought: true }).eq('id', id).single();
+}

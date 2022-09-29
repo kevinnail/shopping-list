@@ -38,3 +38,6 @@ button {
 input {
     border: 2px solid black;
 }
+.bought {
+    text-decoration: line-through;
+}

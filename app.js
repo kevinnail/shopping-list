@@ -1,7 +1,7 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createListItem, getGroceryItems } from './fetch-utils.js';
+import { createListItem, getGroceryItems, completeBuyItem } from './fetch-utils.js';
 import { renderItem } from './render-utils.js';
 /* Get DOM Elements */
 const addItemForm = document.getElementById('add-item-form');
@@ -70,6 +70,18 @@ function displayGroceryList() {
     for (const item of items) {
         const itemEl = renderItem(item);
         groceryList.append(itemEl);
-        console.log(itemEl);
+
+        itemEl.addEventListener('click', async () => {
+            const response = await completeBuyItem(item.id);
+            error = response.error;
+            const updatedItem = response.data;
+            if (error) {
+                displayError();
+            } else {
+                const index = items.indexOf(item);
+                items[index] = updatedItem;
+                displayGroceryList();
+            }
+        });
     }
 }
