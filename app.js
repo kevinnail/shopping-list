@@ -1,8 +1,8 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createListItem } from './fetch-utils.js';
-
+import { createListItem, getGroceryItems } from './fetch-utils.js';
+import { renderItem } from './render-utils.js';
 /* Get DOM Elements */
 const addItemForm = document.getElementById('add-item-form');
 const quantityOfItems = document.getElementById('quantity-input');
@@ -16,6 +16,20 @@ const errorDisplay = document.getElementById('error-display');
 let items = [];
 let error = null;
 /* Events */
+
+window.addEventListener('load', async () => {
+    const response = await getGroceryItems();
+    error = response.error;
+    items = response.data;
+    // console.log(response);
+    if (error) {
+        displayError();
+    } else {
+        // console.log('window event listener, "else" (no error ');
+        displayGroceryList();
+    }
+});
+
 addItemForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const formData = new FormData(addItemForm);
@@ -51,4 +65,11 @@ function displayError() {
     }
 }
 
-function displayGroceryList() {}
+function displayGroceryList() {
+    groceryList.innerHTML = '';
+    for (const item of items) {
+        const itemEl = renderItem(item);
+        groceryList.append(itemEl);
+        console.log(itemEl);
+    }
+}
