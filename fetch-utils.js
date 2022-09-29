@@ -28,3 +28,7 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+
+export async function createListItem(newItem) {
+    return await client.from('lists').insert(newItem).single();
+}
