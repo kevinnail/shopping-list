@@ -45,6 +45,7 @@ li p {
     border-radius: 20px;
     font-size: 1.3em;
     box-shadow: 0px 0px 20px 0px black;
+    width: 500px;
 }
 .bought p {
     text-decoration: line-through;
@@ -53,11 +54,11 @@ li p {
     transform: scale(0.9);
 
     border-radius: 20px;
+    width: 500px;
 }
 
 button:hover {
     background-color: rgb(181, 101, 255);
-    transition-duration: 1s;
 }
 
 button:active {
@@ -66,12 +67,14 @@ button:active {
     transition: 0.1s;
 }
 
-#add-button:hover {
-    /* background-color: rgb(181, 101, 255);
-    transition-duration: 1s; */
+.delete-button {
+    position: relative;
 }
-#add-button:hover:active {
-    /* background-color: rgb(148, 34, 255);
-    transform: scale(0.95);
-    transition: 0.1s; */
+
+ul {
+    /* display: grid;
+    grid-template-columns: 1fr; */
+}
+p {
+    display: inline-block;
 }

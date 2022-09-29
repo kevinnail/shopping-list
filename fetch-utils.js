@@ -45,3 +45,7 @@ export async function deleteAll() {
     const user = getUser();
     return await client.from('lists').delete().eq('user_id', user.id);
 }
+
+export async function deleteItem(id) {
+    return await client.from('lists').delete().eq('id', id).single();
+}

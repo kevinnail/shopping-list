@@ -1,7 +1,13 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createListItem, getGroceryItems, completeBuyItem, deleteAll } from './fetch-utils.js';
+import {
+    createListItem,
+    getGroceryItems,
+    completeBuyItem,
+    deleteAll,
+    deleteItem,
+} from './fetch-utils.js';
 import { renderItem } from './render-utils.js';
 /* Get DOM Elements */
 const addItemForm = document.getElementById('add-item-form');
@@ -88,6 +94,23 @@ function displayGroceryList() {
             } else {
                 const index = items.indexOf(item);
                 items[index] = updatedItem;
+                displayGroceryList();
+            }
+        });
+
+        const btnEl = document.createElement('button');
+        btnEl.textContent = 'delete me';
+        btnEl.classList.add('delete-button');
+        groceryList.append(btnEl);
+
+        btnEl.addEventListener('click', async () => {
+            const response = await deleteItem(item.id);
+            error = response.error;
+            if (error) {
+                displayError();
+            } else {
+                const index = items.indexOf(item);
+                items.splice(index, 1);
                 displayGroceryList();
             }
         });
