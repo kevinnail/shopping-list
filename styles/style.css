@@ -25,6 +25,7 @@ form button {
     display: grid;
     justify-content: center;
     margin: 40px 0px 0px 0px;
+    display: grid;
 }
 
 button {
@@ -39,6 +40,9 @@ input {
     border: 2px solid black;
 }
 
+li {
+    width: 600px;
+}
 li p {
     background-color: white;
     padding: 20px;
@@ -68,12 +72,14 @@ button:active {
 }
 
 .delete-button {
-    position: relative;
+    width: 200px;
+    margin: auto;
 }
 
 ul {
-    /* display: grid;
-    grid-template-columns: 1fr; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 700px;
 }
 p {
     display: inline-block;

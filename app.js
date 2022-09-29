@@ -27,11 +27,9 @@ window.addEventListener('load', async () => {
     const response = await getGroceryItems();
     error = response.error;
     items = response.data;
-    // console.log(response);
     if (error) {
         displayError();
     } else {
-        // console.log('window event listener, "else" (no error ');
         displayGroceryList();
     }
 });
