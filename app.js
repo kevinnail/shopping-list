@@ -1,7 +1,7 @@
 /* Imports */
 // this will check if we have a user and set signout link if it exists
 import './auth/user.js';
-import { createListItem, getGroceryItems, completeBuyItem } from './fetch-utils.js';
+import { createListItem, getGroceryItems, completeBuyItem, deleteAll } from './fetch-utils.js';
 import { renderItem } from './render-utils.js';
 /* Get DOM Elements */
 const addItemForm = document.getElementById('add-item-form');
@@ -52,8 +52,16 @@ addItemForm.addEventListener('submit', async (e) => {
     }
 });
 
-addButton.addEventListener('click', () => {});
-removeButton.addEventListener('click', () => {});
+removeButton.addEventListener('click', async () => {
+    const response = await deleteAll();
+    error = response.error;
+    if (error) {
+        displayError();
+    } else {
+        items = [];
+        displayGroceryList();
+    }
+});
 
 /* Display Functions */
 
