@@ -11,8 +11,11 @@ const removeButton = document.getElementById('remove-button');
 /* State */
 
 /* Events */
-// addButton.addEventListener('click', () => {
-//     alert('hi');
-// });
+addButton.addEventListener('click', () => {
+    alert('hi');
+});
+removeButton.addEventListener('click', () => {
+    alert('hi');
+});
 
 /* Display Functions */
