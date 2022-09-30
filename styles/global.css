@@ -18,8 +18,10 @@ body {
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr;
+    background-image: url(/assets/veggies.jpg);
+    background-repeat: repeat;
+    background-size: cover;
 }
-
 .page-header {
     position: sticky;
     top: 0;
@@ -51,6 +53,9 @@ body {
 
 main {
     padding: 20px;
+    background-color: rgba(135, 41, 222, 0.4);
+    width: 80%;
+    margin: 0px auto 0px auto;
 }
 
 .avatar {
