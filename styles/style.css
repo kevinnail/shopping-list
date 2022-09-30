@@ -1,0 +1,101 @@
+form {
+    background-image: linear-gradient(rgb(76, 0, 255), white);
+    width: 50%;
+    margin: auto;
+    /* max-width: 500px; */
+    border: 1px solid;
+    /* background: var(--offset-color); */
+    padding: 20px;
+
+    display: grid;
+    gap: 20px;
+    min-width: 400px;
+}
+form input,
+form textarea,
+form select,
+form button {
+    width: 100%;
+    font-size: 1.15em;
+    padding: 5px;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    margin: 0px 0px 0px 0px;
+    display: grid;
+    color: white;
+}
+
+.instruction {
+    /* background-color: white; */
+    background-color: rgba(82, 82, 82, 0.7);
+    padding: 5px 10px;
+    /* border-radius: 20px; */
+    border: 2px solid black;
+    text-align: center;
+}
+
+button {
+    height: 40px;
+    border-radius: 2em;
+    font-size: 1.2em;
+    box-shadow: 0px 0px 20px 0px black;
+    padding: 0px 30px;
+}
+
+input {
+    border: 2px solid black;
+}
+
+li {
+    width: 600px;
+}
+li p {
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.3em;
+    box-shadow: 0px 0px 20px 10px black;
+    width: 400px;
+    color: black;
+}
+.bought p {
+    text-decoration: line-through;
+    background-color: rgb(127, 127, 127);
+
+    transform: scale(0.9);
+
+    border-radius: 20px;
+    width: 400px;
+}
+
+button:hover {
+    background-color: rgb(181, 101, 255);
+    cursor: pointer;
+}
+
+button:active {
+    background-color: rgb(148, 34, 255);
+    transform: scale(0.95);
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.delete-button {
+    width: 200px;
+    margin: 25px 0px 0px -135px;
+}
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 700px;
+}
+p {
+    /* display: inline-block; */
+}
+button {
+    margin: 10px;
+}
