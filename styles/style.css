@@ -55,7 +55,7 @@ li p {
     text-decoration: line-through;
     background-color: rgb(127, 127, 127);
 
-    transform: scale(0.9);
+    /* transform: scale(0.9); */
 
     border-radius: 20px;
     width: 500px;
@@ -67,8 +67,8 @@ button:hover {
 
 button:active {
     background-color: rgb(148, 34, 255);
-    transform: scale(0.95);
-    transition: 0.1s;
+    /* transform: scale(0.95); */
+    /* transition: 0.1s; */
 }
 
 .delete-button {
@@ -82,5 +82,8 @@ ul {
     width: 700px;
 }
 p {
-    display: inline-block;
+    /* display: inline-block; */
+}
+button {
+    margin: 10px;
 }

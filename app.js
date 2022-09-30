@@ -15,6 +15,7 @@ const addItemForm = document.getElementById('add-item-form');
 const removeButton = document.getElementById('remove-button');
 const groceryList = document.getElementById('grocery-list');
 const errorDisplay = document.getElementById('error-display');
+const removeBoughtItems = document.getElementById('remove-bought-button');
 
 /* State */
 let items = [];
@@ -63,6 +64,19 @@ removeButton.addEventListener('click', async () => {
         items = [];
         displayGroceryList();
     }
+});
+
+removeBoughtItems.addEventListener('click', async () => {
+    const leftItems = [];
+    for (const item of items) {
+        if (!item.bought) {
+            leftItems.push(item);
+        } else {
+            deleteItem(item.id);
+        }
+    }
+    items = leftItems;
+    displayGroceryList();
 });
 
 /* Display Functions */
